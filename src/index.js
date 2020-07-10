@@ -22,8 +22,8 @@ export default function(initial,onfirst){
 
     const subscribe = (cb)=>{
         if(listeners.length === 0){
-            const f = onfirst(set);
-            if(typeof f === 'function') onlast = f;
+            const f = isFunc(onfirst) ? onfirst(set) : null;
+            if(isFunc(f)) onlast = f;
         }
         listeners.push(cb);
         cb(state);
@@ -37,6 +37,9 @@ export default function(initial,onfirst){
     }
 }
 
+function isObject(a) {return typeof a === 'object'}
+function isFunc(a) {return typeof a === 'function'}
+
 function not_equal(a, b) {
-	return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+	return a != a ? b == b : a !== b || ((a && isObject(a)) || isFunc(a));
 }
