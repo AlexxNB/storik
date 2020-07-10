@@ -83,3 +83,33 @@ counter.reset();
 counter.decrement();
 //Counter value is -1
 ```
+
+## API
+
+### Storik initialization
+
+#### `storik(initial,on_first_subscriber)`
+
+Function, which returns the store object. Returns `Storik store object` First param is `initial` value of the new store. Second param is optional. It is a callback-function, which will be called each time when number of subscribers changes from 0 to 1. This function get `set(value)` method as argument, which allows to set new store value. It May return other callback-function, which will be called when number of subscribers will change from 1 to 0. 
+
+### Storik store object
+
+
+#### `subscribe(callback)`
+
+Register the store subscription. Whenever store's value will change, `callback` function will be called with `value` passed. At the start of subscription `callback` function will be called once.
+
+
+#### `get()`
+
+Get current value of the store. 
+
+
+#### `set(value)`
+
+Set new `value` of the store. Will triger all subscribers.
+
+
+#### `update(callback)`
+
+Allows to update store value. `callbak` function gets current `value` as a parameter and MUST return changed value, which be set as new store value. Will triger all subscribers.
