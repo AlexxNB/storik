@@ -1,6 +1,6 @@
 {
   "name": "storik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny store with subscriptions",
   "main": "dist/storik.js",
   "module": "dist/storik.mjs",
