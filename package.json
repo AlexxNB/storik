@@ -1,0 +1,34 @@
+{
+  "name": "storik",
+  "version": "1.0.0",
+  "description": "Tiny store with subscriptions",
+  "main": "dist/storik.js",
+  "module": "dist/storik.mjs",
+  "browser": "dist/storik.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "rollup -c --environment NODE_ENV:test",
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/storik.git"
+  },
+  "keywords": [
+    "store",
+    "observable",
+    "writable",
+    "state"
+  ],
+  "author": "Alexey Schebelev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/storik/issues"
+  },
+  "homepage": "https://github.com/AlexxNB/storik#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0"
+  }
+}
