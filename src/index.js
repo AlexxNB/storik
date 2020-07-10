@@ -3,6 +3,8 @@ export default function(initial,onfirst){
     let state = initial;
     let listeners = [];
 
+    const get = () => state;
+
     const set = v => {
         if(not_equal(v,state)){
             const old = state;
@@ -32,8 +34,9 @@ export default function(initial,onfirst){
     
     return {
         subscribe,
+        get,
         set,
-        update
+        update,
     }
 }
 
