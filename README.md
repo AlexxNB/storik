@@ -1,3 +1,6 @@
+>  **This project is suspended!**
+>   Use my other tiny store which is awesome successor of storik - https://github.com/AlexxNB/storxy
+
 # storik
 
 Storik is very tiny (~ 400 bytes!) store with subscription. It is based on observables principles and inspired by writable stores from Svelte package.
